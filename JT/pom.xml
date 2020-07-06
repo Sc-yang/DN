@@ -12,6 +12,7 @@
         <module>JedisTest</module>
     </modules>
 
+<!-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
