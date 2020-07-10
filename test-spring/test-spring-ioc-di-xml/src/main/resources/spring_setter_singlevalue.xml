@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="singleValue" class="com.priv.singlevalue.SingleValue">
+        <!---->
+        <!---->
+        <!--
+        去寻找方法名，而不是传入的变量名
+        因此你要写man，而不能写isMan
+
+        setName - name
+        setAge - age
+        setMan - man
+        -->
+        <!-- value="20" 不代表20是string类型，20依然是int类型，双引号没有任何意义，只是做一个间隔-->
+        <property name="name" value="zhangsan"></property>
+        <property name="age" value="20"></property>
+        <property name="salary" value="10000.1"></property>
+        <property name="man" value="true"></property>
+
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- spring清单文件，来源于spring官方文档，告诉spring如何创建和管理对象-->
+
+    <!--
+    告诉spring实例化com.priv.ioc.Hello对象
+    并把创建完的对象存储到spring容器中集中管理
+    id="hello" 定义容器的对象名，不可重复！！！
+    class="com.priv.ioc.Hello" 反射实例化对象
+    Object hello = Class.forName("com.priv.ioc.Hello").newInstance();要求该类必须有无参数构造函数
+    scope属性告知spring创建对象的作用阈
+    scope="singleton" 单例，默认
+    scope="prototype" 多例
+    init-method="init" init是一个自定义方法名，存在于class="com.priv.ioc.Hello"的类中
+    destroy-method="destroy" 同上
+    lazy-init="defalt" 等同于 lazy-init="false"，容器启动时，创建单例对象
+    lazy-init="true"
+
+    -->
+    <bean id="hello" class="com.priv.ioc.Hello" scope="singleton" lazy-init="true"
+    init-method="init" destroy-method="destroy">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>

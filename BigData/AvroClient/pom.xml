@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>AvroSerial</artifactId>
+    <artifactId>AvroClient</artifactId>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <compiler-plugin.version>2.3.2</compiler-plugin.version>
@@ -72,7 +72,7 @@
                             <goal>idl-protocol</goal>
                         </goals>
                         <configuration>
-                            <!-- 存放asdv文件的目录 -->
+                            <!-- 存放avdl文件的目录 -->
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <!-- 产生的java文件的存放目录 -->
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>

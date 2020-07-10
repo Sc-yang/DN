@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao1" class="com.priv.object.UserDaoImpl">
+
+    </bean>
+
+    <!--
+        name="userDao" userDao - setUserDao
+        ref="名称" 名称对应spring的id，就是上面那个
+    -->
+    <bean id="userService" class="com.priv.object.UserServiceImpl">
+        <property name="userDao" ref="userDao1"></property>
+    </bean>
+
+</beans>
