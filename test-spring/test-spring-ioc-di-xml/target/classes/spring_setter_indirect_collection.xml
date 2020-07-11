@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="hello" class="com.priv.ioc.Hello"></bean>
+
+    <bean id="message" class="com.priv.collection.Message">
+        <property name="list" ref="listId"></property>
+        <property name="set" ref="setId"></property>
+        <property name="map" ref="mapId"></property>
+        <property name="props" ref="propsId"></property>
+    </bean>
+
+    <!-- -->
+    <util:list id="listId">
+        <value>北</value>
+        <value>上</value>
+        <value>广</value>
+        <value>2</value>
+        <ref bean="hello"></ref>
+    </util:list>
+    <util:set id="setId">
+        <value>北</value>
+        <value>上</value>
+        <value>广</value>
+        <value>2</value>
+        <ref bean="hello"></ref>
+    </util:set>
+    <util:map id="mapId">
+        <entry key="bj" value="北京"></entry>
+        <entry key="age" value="20"></entry>
+        <entry key="hl" value-ref="hello"></entry>
+    </util:map>
+    <util:properties id="propsId">
+        <prop key="bj">北京</prop>
+        <prop key="age">20</prop>
+    </util:properties>
+
+
+</beans>

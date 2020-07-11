@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- spring容器加载属性文件，多个属性文件用逗号间隔-->
+    <context:property-placeholder location="classpath:mysql.properties"></context:property-placeholder>
+
+    <!-- 从spring容器中-->
+    <bean id="jdbcUtil" class="com.priv.expression1.JdbcUtil">
+        <property name="driverClass" value="${jdbc_driverClass}"></property>
+        <property name="url" value="${jdbc_url}"></property>
+        <property name="userName" value="${jdbc_userName}"></property>
+        <property name="userPassWord" value="${jdbc_userPassword}"></property>
+    </bean>
+</beans>

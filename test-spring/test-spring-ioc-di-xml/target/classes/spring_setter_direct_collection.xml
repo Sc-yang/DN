@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="hello" class="com.priv.ioc.Hello"></bean>
+    <bean id="message" class="com.priv.collection.Message">
+        <property name="list">
+            <list>
+                <value>北</value>
+                <value>上</value>
+                <value>广</value>
+                <value>2</value>
+                <ref bean="hello"></ref>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>北</value>
+                <value>上</value>
+                <value>广</value>
+                <value>2</value>
+                <ref bean="hello"></ref>
+            </set>
+
+        </property>
+        <property name="map">
+            <map>
+                <entry key="bj" value="北京"></entry>
+                <entry key="age" value="20"></entry>
+                <entry key="hl" value-ref="hello"></entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="bj">北京</prop>
+                <prop key="age">20</prop>
+            </props>
+        </property>
+
+    </bean>
+</beans>
