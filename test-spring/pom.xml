@@ -14,6 +14,8 @@
         <module>test-spring-ioc-di-xml</module>
         <module>test-spring-annotation</module>
     </modules>
+	
+	
 
 
 </project>
