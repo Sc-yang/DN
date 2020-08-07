@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello" class="com.priv.ioc.Hello"></bean>
+
+    <bean id="other" class="com.priv.other.OtherIOCDI">
+        <property name="name" value="zhangsan"></property>
+        <property name="hello" ref="hello"></property>
+    </bean>
+
+
+    <!--spring4 推荐使用p的写法
+    p:hello-ref="hello"
+    p:代表 property
+    hello-ref代表 name="hello" ref="hello"
+
+    p:name="wangyu"
+    p:代表 property
+    name="wangyu" name="name" value="zhangsan"
+    -->
+    <bean id="other1" class="com.priv.other.OtherIOCDI" p:hello-ref="hello" p:name="wangyu"></bean>
+
+
+    <!--标准写法-->
+    <!--<bean id="dog" class="com.priv.other.Dog"></bean>-->
+    <!--<bean id="cat" class="com.priv.other.Cat"></bean>-->
+    <!--<bean id="user" class="com.priv.other.User">-->
+        <!--<property name="name" value="张三"></property>-->
+        <!--<property name="cat" ref="cat"></property>-->
+        <!--<property name="dog" ref="dog"></property>-->
+    <!--</bean>-->
+
+
+    <!--不标准写法，也不推荐，降低代码可读性-->
+    <!--
+    autowire 自动装配
+    byName 按名称装配  byType同理
+    首先在com.priv.other.User类中搜索所有的set方法
+    把set方法setCat - Cat -cat  拿cat作为id去spring容器中寻找，找到就注入
+    setDog 同理
+
+    只支持对象装配，不支持单值装配
+    -->
+    <bean id="dog" class="com.priv.other.Dog"></bean>
+    <bean id="cat" class="com.priv.other.Cat"></bean>
+    <bean id="user" class="com.priv.other.User" autowire="byName">
+
+    </bean>
+</beans>

@@ -16,5 +16,4 @@ public class TestSpringDirectCollection {
         context.close();
     }
 
-
 }
