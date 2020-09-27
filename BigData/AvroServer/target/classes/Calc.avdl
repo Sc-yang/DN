@@ -1,5 +1,0 @@
-@namespace("avro.service")
-protocol Calc {
-    double add(double i, double j);
-    double minus(double i, double j);
-}

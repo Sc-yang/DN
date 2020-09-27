@@ -12,6 +12,7 @@
         <module>AvroSerial</module>
         <module>AvroClient</module>
         <module>AvroServer</module>
+        <module>MR</module>
     </modules>
 
 

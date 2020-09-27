@@ -13,6 +13,9 @@
         <module>test-spring-xml</module>
         <module>test-spring-ioc-di-xml</module>
         <module>test-spring-annotation</module>
+        <module>test-static-proxy</module>
+        <module>test-dynamic-proxy</module>
+        <module>test-dynamic-proxy-cglib</module>
     </modules>
 	
 	

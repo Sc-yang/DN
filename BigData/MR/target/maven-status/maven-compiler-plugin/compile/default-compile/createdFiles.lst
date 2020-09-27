@@ -1,0 +1,3 @@
+com/priv/wordcount/WordCountReduce.class
+com/priv/wordcount/WordCountMapper.class
+com/priv/wordcount/WordCountDriver.class
