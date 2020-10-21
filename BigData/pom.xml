@@ -13,6 +13,8 @@
         <module>AvroClient</module>
         <module>AvroServer</module>
         <module>MR</module>
+        <module>HiveUDF</module>
+        <module>HiveJDBC</module>
     </modules>
 
 
